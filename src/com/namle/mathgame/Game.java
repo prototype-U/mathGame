@@ -65,7 +65,7 @@ public class Game extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 				Intent menu = new Intent(Game.this, Menu.class);
-				startActivityForResult(menu, 0);
+				startActivity(menu);
 			}
 		});
 
@@ -76,10 +76,7 @@ public class Game extends Activity implements OnClickListener {
 		
 	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		finish();
-	}
+
 
 	@Override
 	public void onBackPressed() {

@@ -72,7 +72,7 @@ public class Menu extends Activity {
 	
 	@Override
 	public void onBackPressed() {
-		startActivity(new Intent(Menu.this, Game.class));
+		// the activity wants to receive bundles which we dont send here
 		finish();
 	}
 	
