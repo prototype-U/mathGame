@@ -187,21 +187,33 @@ public class Game extends Activity implements OnClickListener {
 		Random s = new Random();
 		if (diffi.contains("easy") && name.contains("sub")) {
 			a = s.nextInt(21);
-			b = s.nextInt(21);
+			if(a==0)
+				a=21;
+			b = s.nextInt(a);
 		} else if (diffi.contains("medium") && name.contains("sub")) {
 			a = s.nextInt(41);
+			if(a==0)
+				a=41;
 			b = s.nextInt(a);
 		} else if (diffi.contains("hard") && name.contains("sub")) {
 			a = s.nextInt(61);
+			if(a==0)
+				a=61;
 			b = s.nextInt(a);
 		} else if (diffi.contains("easy") && name.contains("div")) {
 			a = s.nextInt(31);
+			if(a==0)
+				a=31;
 			b = s.nextInt(a);
 		} else if (diffi.contains("medium") && name.contains("div")) {
 			a = s.nextInt(61);
+			if(a==0)
+				a=61;
 			b = s.nextInt(a);
 		} else if (diffi.contains("hard") && name.contains("div")) {
 			a = s.nextInt(101);
+			if(a==0)
+				a=101;
 			b = s.nextInt(a);
 		}
 		num1 = (TextView) findViewById(R.id.num1);
