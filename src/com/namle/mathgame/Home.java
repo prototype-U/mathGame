@@ -12,10 +12,12 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Home extends Activity {
 	
 	final Context context = this;
+	AlertDialog.Builder name;
  
 	public void onCreate(Bundle savedInstanceState) {
  
@@ -29,7 +31,7 @@ public class Home extends Activity {
 		start.setOnClickListener(new OnClickListener() {
 			@Override
             public void onClick(View v) {
-				AlertDialog.Builder name = new AlertDialog.Builder(context);
+				name = new AlertDialog.Builder(context);
 				
 				name.setTitle("Name");
 				name.setMessage("Please enter your name");
@@ -53,9 +55,13 @@ public class Home extends Activity {
 				name.setNegativeButton("OK", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 					String name = input.getText().toString();
+					if(name.contentEquals("")){
+						Toast.makeText(getBaseContext(), "You did not enter any name", Toast.LENGTH_SHORT).show();
+					} else{
 					Intent operation = new Intent(Home.this,Operation.class);
 	                startActivity(operation);
 	                finish();
+					}
 				  }
 				});
 
