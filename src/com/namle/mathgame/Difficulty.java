@@ -12,11 +12,17 @@ import android.content.Intent;
 import android.os.Build;
 
 public class Difficulty extends Activity {
-
+	String gotIt,game,difficulty;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_difficulty);
+		
+		Bundle receive = getIntent().getExtras(); // receive the intent we sent
+		gotIt= receive.getString("key"); // will get either sub or div
+		
+		
+		
 		
 		Button back = (Button) findViewById(R.id.back3);
 		Button easy = (Button) findViewById(R.id.easy);
@@ -37,7 +43,8 @@ public class Difficulty extends Activity {
 			 
 			@Override
 			public void onClick(View arg0) {
-				launchGame();
+				difficulty= "easy";
+				launchGame(difficulty);
 				}
 			});	
 		
@@ -45,7 +52,8 @@ public class Difficulty extends Activity {
 			 
 			@Override
 			public void onClick(View arg0) {
-				launchGame();
+				difficulty= "medium";
+				launchGame(difficulty);
 				}
 			});	
 		
@@ -53,7 +61,8 @@ public class Difficulty extends Activity {
 			 
 			@Override
 			public void onClick(View arg0) {
-				launchGame();
+				difficulty= "hard";
+				launchGame(difficulty);
 				}
 			});	
 	}
@@ -66,10 +75,27 @@ public class Difficulty extends Activity {
 	
 }
 	
-	public void launchGame() {
-		Intent game = new Intent(Difficulty.this,Game.class);
+	public void launchGame(String difficulty2) {
+		if(gotIt.contentEquals("sub")){
+		game= "sub";
+		Bundle startGame = new Bundle();
+		startGame.putString("game", game);
+		startGame.putString("diff", difficulty2);
+		Intent game = new Intent(Difficulty.this,Game.class); // this will take to subtraction game
+		game.putExtras(startGame); // again we sent data to next class ( sub)
         startActivity(game);
         finish();
+		}
+		else if( gotIt.contentEquals("div")){
+			game= "div";
+			Bundle startGame = new Bundle();
+			startGame.putString("game", game);
+			
+			Intent game = new Intent(Difficulty.this,Game.class); // this to division game
+			game.putExtras(startGame);// again we sent data to next class (div)
+	        startActivity(game); 
+	        finish();
+		}
 	}
 	
 

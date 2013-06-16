@@ -1,17 +1,18 @@
 package com.namle.mathgame;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
 
 public class Operation extends Activity {
+	String input= null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,8 @@ public class Operation extends Activity {
 			 
 			@Override
 			public void onClick(View arg0) {
-				difficulty();
+				input="sub";
+				difficulty(input);
 				}
 			});	
 		
@@ -44,7 +46,8 @@ public class Operation extends Activity {
 			 
 			@Override
 			public void onClick(View arg0) {
-				difficulty();
+				input="div";
+				difficulty(input);
 				}
 			});	
 		
@@ -58,8 +61,11 @@ public class Operation extends Activity {
 		
 	}
 
-		public void difficulty() {
+		public void difficulty(String input2) {
 			Intent diffi = new Intent(Operation.this,Difficulty.class);
+			Bundle send = new Bundle();
+			send.putString("key", input2);
+			diffi.putExtras(send);
 	        startActivity(diffi);
 	        finish();
 		}
