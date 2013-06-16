@@ -25,7 +25,8 @@ public class Game extends Activity implements OnClickListener {
 	int a, b;
 	Button check;
 	TextView num1,num2;
-
+	int counter = 0;
+	int score = 0;
 	EditText answer;
 	String answerstring=null;
 	final Context context = this;
@@ -143,6 +144,9 @@ public class Game extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 		case R.id.submit:
+			counter= counter + 1;
+			if( counter == 10)
+				gamefinish();
 			if(name.contentEquals("div")){
 				
 				
@@ -151,11 +155,15 @@ public class Game extends Activity implements OnClickListener {
 					String finalans = Integer.toString(divide);
 				if (answerstring.contentEquals(finalans)){
 					Toast.makeText(getBaseContext(), "Your answer is right!", Toast.LENGTH_SHORT).show();
+					score = score +1;
+					
 					answer.setText("");
 					randomNumber();
 				}else{
 					Toast.makeText(getBaseContext(), "Your answer is wrong!", Toast.LENGTH_SHORT).show();
 					answer.setText("");
+					if(score > 0)
+						score= score -1;
 					randomNumber();
 				}
 			}
@@ -166,17 +174,29 @@ public class Game extends Activity implements OnClickListener {
 					String finalans = Integer.toString(sub);
 				if(answerstring.contentEquals(finalans)){
 					Toast.makeText(getBaseContext(), "Your answer is right!", Toast.LENGTH_SHORT).show();
+					score= score+1;
 					answer.setText("");
 					randomNumber();
 				}else{
 					Toast.makeText(getBaseContext(), "Your answer is wrong!", Toast.LENGTH_SHORT).show();
 					answer.setText("");
+					if(score > 0)
+					score= score -1;
 					randomNumber();
 				
 				}
 			}
 		}
 	}
+
+	private void gamefinish() {
+		// TODO Auto-generated method stub
+		Toast.makeText(getBaseContext(), "Your score is "+score, Toast.LENGTH_LONG).show();
+		Intent intent = new Intent (Game.this, Home.class);
+		startActivity(intent);
+	}
+
+
 
 	private void randomNumber() {
 		// TODO Auto-generated method stub
