@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Game" >
+
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="26dp"
+        android:text="@string/menu"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/menu"
+        android:layout_marginRight="15dp"
+        android:shadowColor="#59de3e"
+        android:shadowDx="5.0"
+        android:shadowDy="5.0"
+        android:shadowRadius="10.0"
+        android:text="@string/subtraction"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ff0000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/menu"
+        android:layout_below="@+id/menu"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="39dp"
+        android:text="@string/mode"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mode"
+        android:layout_below="@+id/mode"
+        android:layout_marginTop="22dp"
+        android:text="@string/lives"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mode"
+        android:layout_alignBottom="@+id/mode"
+        android:layout_alignLeft="@+id/gameTitle"
+        android:layout_marginLeft="35dp"
+        android:text="@string/question"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/scoreCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lives"
+        android:layout_alignBottom="@+id/lives"
+        android:layout_alignLeft="@+id/question"
+        android:text="@string/scores"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="200sp"
+        android:layout_height="70sp"
+        android:layout_below="@+id/answer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:text="@string/submit"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/num2"
+        android:layout_centerHorizontal="true"
+        android:text="-"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ff0000"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/num2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/num1"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="19dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" 
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:layout_alignLeft="@+id/menu"
+        android:layout_below="@+id/operation"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/enterAnswer"
+        android:inputType="number"
+        android:maxLength="2"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/num1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/answer"
+        android:layout_below="@+id/lives"
+        android:layout_marginTop="33dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" />
+
+</RelativeLayout>

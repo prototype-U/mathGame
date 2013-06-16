@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.namle.mathgame"
+    android:installLocation="preferExternal"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar" 
+        android:screenOrientation="portrait">
+        <activity
+            android:name="com.namle.mathgame.Home"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.namle.mathgame.Instruction"
+            android:label="@string/title_activity_instruction"
+            android:parentActivityName="Home"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.namle.mathgame.Home" />
+        </activity>
+        <activity
+            android:name="com.namle.mathgame.Game"
+            android:label="@string/title_activity_game"
+            android:parentActivityName="Difficulty" 
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.namle.mathgame.difficulty" />
+        </activity>
+        <activity
+            android:name="com.namle.mathgame.Operation"
+            android:label="@string/title_activity_operation"
+            android:parentActivityName="Home" 
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.namle.mathgame.home" />
+        </activity>
+        <activity
+            android:name="com.namle.mathgame.Difficulty"
+            android:label="@string/title_activity_difficulty"
+            android:parentActivityName="Operation" 
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.namle.mathgame.operation" />
+        </activity>
+        <activity
+            android:name="com.namle.mathgame.Results"
+            android:label="@string/title_activity_results" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.namle.mathgame.Menu"
+            android:label="@string/title_activity_menu" 
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.namle.mathgame.game" />
+        </activity>
+    </application>
+
+</manifest>

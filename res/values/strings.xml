@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Settings</string>
+    <string name="titleHome">Welcome to the Math Game!</string>
+    <string name="titleHome2">So you think you can do Math?</string>
+    <string name="author">By: Josh Trader</string>
+    <string name="start">START</string>
+    <string name="instruction">INSTRUCTION</string>
+    <string name="quit">QUIT</string>
+    <string name="app_name">Math Game</string>
+    <string name="instructMessage">The goal of this game is to test your knowledge of the 2 hardest operation in mathematic. Subtraction and Division.</string>
+    <string name="instructMessage2">You first must pick an operation to play, followed by a level of difficulty mode and must answer the questions correctly. Incorrect answer will result in a deduction of 1 live, starting with 3. You will see your summary of how you did at the end.</string>
+    <string name="instructMessage3">GOOD LUCK! \n\n NOTE: Try NOT to use a CALCULATOR in order to test your knowledge of mathematic correctly.</string>
+    <string name="title_activity_instruction">INSTRUCTION</string>
+    <string name="back">BACK</string>
+    <string name="title_activity_game">Game</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="subtraction">SUBTRACTION</string>
+    <string name="menu">MENU</string>
+    <string name="mode">MODE: </string>
+    <string name="question">QUESTION:</string>
+    <string name="scores">SCORE: </string>
+    <string name="lives">LIVES: </string>
+    <string name="submit">SUBMIT</string>
+    <string name="enterAnswer">ENTER ANSWER</string>
+    <string name="title_activity_operation">Operation</string>
+    <string name="operation">PICK AN OPERATION</string>
+    <string name="division">DIVISION</string>
+    <string name="subtract">SUBTRACTION</string>
+    <string name="title_activity_difficulty">Difficulty</string>
+    <string name="difficulty">SELECT A DIFFICULTY MODE</string>
+    <string name="easy">EASY</string>
+    <string name="medium">MEDIUM</string>
+    <string name="hard">HARD</string>
+    <string name="title_activity_results">Results</string>
+    <string name="results">RESULTS</string>
+    <string name="cont">CONTINUE</string>
+    <string name="name">Name: </string>
+    <string name="live">Lives: </string>
+    <string name="score">Score: </string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="menuTitle">Please pick an option to continue</string>
+    <string name="retry">RETRY</string>
+    <string name="changeMode">CHANGE DIFFICULTY MODE</string>
+    <string name="newCat">New Category</string>
+    <string name="home">HOME</string>
+
+</resources>
